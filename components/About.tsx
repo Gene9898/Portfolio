@@ -7,7 +7,7 @@ const About = React.forwardRef((props, ref) => {
 			id="about"
 			className={`w-full h-1/3 z-10 border-b-2 border-gray-100 p-0 scroll-m-40`}
 		>
-			HELLO
+			About-Macbook
 		</section>
 	);
 });
