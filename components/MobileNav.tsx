@@ -30,7 +30,8 @@ const MobileNav = () => {
 					/>
 				</section>
                 <div className="flex flex-col flex-wrap gap-4 items-center justify-center">
-                    <li className="p-3 hover:text-blue-500 hover:pt-1 hover:scale-125" onClick={()=>{handleScroll("about"); setMobileNav(false)}}><h3>About</h3></li>
+                    <li className="p-3 hover:text-blue-500 hover:pt-1 hover:scale-125" 
+					onClick={()=>{handleScroll("about"); setMobileNav(false)}}><h3>About</h3></li>
                     <li className="p-3 hover:text-blue-500 hover:pt-1 hover:scale-125" onClick={()=>{handleScroll("education"); setMobileNav(false)}}><h3>Education</h3></li>
                     <li className="p-3 hover:text-blue-500 hover:pt-1 hover:scale-125" onClick={()=>{handleScroll("projects"); setMobileNav(false)}}><h3>Projects</h3></li>
                     <li className="p-3 hover:text-blue-500 hover:pt-1 hover:scale-125" onClick={()=>{handleScroll("contact"); setMobileNav(false)}}><h3>Contact</h3></li>
