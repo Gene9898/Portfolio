@@ -1,9 +1,9 @@
 import React from "react";
 
-const Projects = () => {
+const Experience = () => {
   return (
-    <div id="projects" className={`contentDiv`}>
-      Projects
+    <section id="experience" className={`contentDiv`}>
+      Experience
       <p>
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -76,8 +76,8 @@ const Projects = () => {
         since the 1500s, when an unknown printer took a galley of type and
         scrambled it to make a type specimen book.
       </p>
-    </div>
+    </section>
   );
 };
 
-export default Projects;
+export default Experience;

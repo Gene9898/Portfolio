@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { RxCross1 } from "react-icons/rx";
-import { handleScroll } from "@/lib/utils";
 const MobileNav = () => {
 	const [mobileNav, setMobileNav] = useState(false);
 

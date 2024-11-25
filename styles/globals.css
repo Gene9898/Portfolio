@@ -3,9 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   body {
-    @apply bg-[#FFFAFA];
-    @apply dark:bg-neutral-700;
+    @apply bg-gray-900;
     @apply overflow-x-hidden;
   }
   h1 {
@@ -35,4 +37,17 @@
 }
 
 @layer components {
+
+  .navElement{
+    @apply flex flex-row gap-2 items-center cursor-pointer transition-spacing duration-300;
+  }
+  .title{
+    @apply text-gray-300 text-xl font-semibold tracking-widest;
+  }
+  .content{
+    @apply text-gray-400 text-lg;
+  }
+  .contentDiv{
+    @apply scroll-my-20;
+  }
 }
