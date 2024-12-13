@@ -37,17 +37,31 @@
 }
 
 @layer components {
-
-  .navElement{
-    @apply flex flex-row gap-2 items-center cursor-pointer transition-spacing duration-300;
+  .navElement {
+    @apply flex flex-row gap-2 items-center cursor-pointer transition-spacing duration-300 font-mono;
   }
-  .title{
-    @apply text-gray-300 text-xl font-semibold tracking-widest;
+  .navbarTitle {
+    @apply text-gray-300 text-xl font-semibold tracking-widest font-mono;
   }
-  .content{
+  .contentTitle {
+    @apply sticky lg:hidden lg:static top-0 h-14 z-10 bg-gray-900 opacity-95 flex items-center;
+  }
+  .contentTitleText {
+    @apply text-base text-gray-300 font-semibold tracking-widest font-mono;
+  }
+  .contentSubtitle {
+    @apply text-gray-300 text-base font-semibold tracking-widest;
+  }
+  .navContent {
     @apply text-gray-400 text-lg;
   }
-  .contentDiv{
+  .content {
+    @apply text-gray-400 text-lg lg:p-4;
+  }
+  .contentDiv {
     @apply scroll-my-20;
+  }
+  .cardDiv {
+    @apply flex flex-col gap-8 rounded-lg lg:hover:bg-gray-800 lg:p-4 lg:cursor-pointer lg:hover:shadow-sm lg:hover:shadow-gray-700;
   }
 }

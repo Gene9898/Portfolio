@@ -5,12 +5,15 @@ import Education from "./Education";
 import Projects from "./Projects";
 import Footer from "./Footer";
 
-const Content = () => {
+type ContentProps = {
+  className: string;
+};
+
+const Content = ({ className }: ContentProps) => {
   return (
-    <div className="lg:w-1/2 flex flex-col gap-20 h-full text-gray-400">
+    <div className={`flex flex-col gap-20 text-gray-400 ${className}`}>
       <About />
       <Experience />
-      <Education />
       <Projects />
     </div>
   );

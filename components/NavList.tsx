@@ -5,57 +5,41 @@ const NavList = () => {
   const [elementHeights, setElementHeights] = useState<[number, number][]>([]);
 
   const navElements = useMemo(
-    () => ["about", "experience", "education", "projects"],
+    () => ["about", "experience", "projects"],
     []
   );
   const [navFocus, setNavFocus] = useState(navElements[0]);
 
   useEffect(() => {
-    const handleResize = () => {
-      const arr: [number, number][] = [];
-      navElements.forEach((navElem, i) => {
-        const element = document.getElementById(navElem);
-        const curElementHeight = element?.offsetHeight || 0;
-        if (i === 0) {
-          arr.push([0, curElementHeight - 80]);
-        } else {
-          arr.push([arr[i - 1][1], arr[i - 1][1] + curElementHeight - 60]);
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px 0px 0px 0px",
+      threshold: 0.5,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setNavFocus(entry.target.id);
         }
       });
-
-      setElementHeights(arr);
     };
 
-    window.addEventListener("resize", handleResize);
-    handleResize(); // Initial calculation
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
 
+    navElements.forEach((navElem) => {
+      const element = document.getElementById(navElem);
+      if (element) observer.observe(element);
+    });
+
+    // Cleanup
     return () => {
-      window.removeEventListener("resize", handleResize);
+      observer.disconnect();
     };
   }, [navElements]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const elementIndex = navElements.indexOf(navFocus);
-      if (
-        elementIndex > 0 &&
-        scrollPosition < elementHeights[elementIndex][0]
-      ) {
-        setNavFocus(navElements[elementIndex - 1]);
-      } else if (
-        elementIndex < navElements.length - 1 &&
-        scrollPosition > elementHeights[elementIndex][1]
-      ) {
-        setNavFocus(navElements[elementIndex + 1]);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [elementHeights, navElements, navFocus]);
 
   return (
     <div className="hidden lg:flex flex-col w-fit gap-6 ">

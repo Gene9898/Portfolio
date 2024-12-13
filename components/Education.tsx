@@ -3,7 +3,9 @@ import React from "react";
 const Education = () => {
   return (
     <section id="education" className={`contentDiv`}>
-      Education
+      <p className="contentTitle">
+        <span className="contentTitleText">EDUCATION</span>
+      </p>
       <p>
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
