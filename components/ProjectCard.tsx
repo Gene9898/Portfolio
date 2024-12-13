@@ -22,7 +22,6 @@ const ProjectCard = () => {
                   style={{ height: "100%", width: "auto" }}
                   src="/dummy.png"
                   alt="Project Image"
-                  objectFit="contain"
                 />
               </div>
               <p className="contentSubtitle">{proj.name}</p>
